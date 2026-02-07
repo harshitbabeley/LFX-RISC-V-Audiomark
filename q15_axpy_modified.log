@@ -4305,71 +4305,6 @@ IN: strncmp
 
 ----------------
 IN: strncmp
-0x00024c10:  0006be03          ld                      t3,0(a3)
-0x00024c14:  06a1              addi                    a3,a3,8
-0x00024c16:  25c59163          bne                     a1,t3,578               # 0x24e58
-
-----------------
-IN: strncmp
-0x00024e58:  0feff737          lui                     a4,65279
-0x00024e5c:  0712              slli                    a4,a4,4
-0x00024e5e:  eff70713          addi                    a4,a4,-257
-0x00024e62:  0742              slli                    a4,a4,16
-0x00024e64:  eff70713          addi                    a4,a4,-257
-0x00024e68:  073e              slli                    a4,a4,15
-0x00024e6a:  f7f70713          addi                    a4,a4,-129
-0x00024e6e:  01c5c533          xor                     a0,a1,t3
-0x00024e72:  00e5f7b3          and                     a5,a1,a4
-0x00024e76:  97ba              add                     a5,a5,a4
-0x00024e78:  00e576b3          and                     a3,a0,a4
-0x00024e7c:  9736              add                     a4,a4,a3
-0x00024e7e:  8fcd              or                      a5,a5,a1
-0x00024e80:  8f49              or                      a4,a4,a0
-0x00024e82:  fff7c793          not                     a5,a5
-0x00024e86:  8fd9              or                      a5,a5,a4
-0x00024e88:  0807f693          andi                    a3,a5,128
-0x00024e8c:  4701              mv                      a4,zero
-0x00024e8e:  e2068ae3          beqz                    a3,-460                 # 0x24cc2
-
-----------------
-IN: strncmp
-0x00024cc2:  03079713          slli                    a4,a5,48
-0x00024cc6:  16074a63          bltz                    a4,372                  # 0x24e3a
-
-----------------
-IN: strncmp
-0x00024e3a:  4e85              addi                    t4,zero,1
-0x00024e3c:  4705              addi                    a4,zero,1
-0x00024e3e:  bd65              j                       -328                    # 0x24cf6
-
-----------------
-IN: strncmp
-0x00024cf6:  4501              mv                      a0,zero
-0x00024cf8:  dccef3e3          bleu                    a2,t4,-570              # 0x24abe
-
-----------------
-IN: strncmp
-0x00024cfc:  070e              slli                    a4,a4,3
-0x00024cfe:  00e5d533          srl                     a0,a1,a4
-0x00024d02:  00ee5733          srl                     a4,t3,a4
-0x00024d06:  0ff57513          andi                    a0,a0,255
-0x00024d0a:  0ff77793          andi                    a5,a4,255
-0x00024d0e:  9d1d              subw                    a0,a0,a5
-0x00024d10:  b37d              j                       -594                    # 0x24abe
-
-----------------
-IN: strncmp
-0x00024abe:  6422              ld                      s0,8(sp)
-0x00024ac0:  0141              addi                    sp,sp,16
-0x00024ac2:  8082              ret                     
-
-----------------
-IN: getenv
-0x00019eea:  014487b3          add                     a5,s1,s4
-0x00019eee:  f16d              bnez                    a0,-30                  # 0x19ed0
-
-----------------
-IN: strncmp
 0x00024adc:  9ae1              andi                    a3,a3,-8
 0x00024ade:  feff0337          lui                     t1,-4112
 0x00024ae2:  0006be03          ld                      t3,0(a3)
@@ -4454,50 +4389,14 @@ IN: strncmp
 
 ----------------
 IN: strncmp
-0x00024d12:  0feff7b7          lui                     a5,65279
-0x00024d16:  0792              slli                    a5,a5,4
-0x00024d18:  eff78793          addi                    a5,a5,-257
-0x00024d1c:  07c2              slli                    a5,a5,16
-0x00024d1e:  eff78793          addi                    a5,a5,-257
-0x00024d22:  07be              slli                    a5,a5,15
-0x00024d24:  f7f78793          addi                    a5,a5,-129
-0x00024d28:  00f5f733          and                     a4,a1,a5
-0x00024d2c:  973e              add                     a4,a4,a5
-0x00024d2e:  0105c533          xor                     a0,a1,a6
-0x00024d32:  8f4d              or                      a4,a4,a1
-0x00024d34:  fff74713          not                     a4,a4
-0x00024d38:  00f576b3          and                     a3,a0,a5
-0x00024d3c:  8f49              or                      a4,a4,a0
-0x00024d3e:  97b6              add                     a5,a5,a3
-0x00024d40:  8fd9              or                      a5,a5,a4
-0x00024d42:  0807f713          andi                    a4,a5,128
-0x00024d46:  ef21              bnez                    a4,88                   # 0x24d9e
+0x00024abe:  6422              ld                      s0,8(sp)
+0x00024ac0:  0141              addi                    sp,sp,16
+0x00024ac2:  8082              ret                     
 
 ----------------
-IN: strncmp
-0x00024d48:  03079713          slli                    a4,a5,48
-0x00024d4c:  04074c63          bltz                    a4,88                   # 0x24da4
-
-----------------
-IN: strncmp
-0x00024da4:  4705              addi                    a4,zero,1
-0x00024da6:  4785              addi                    a5,zero,1
-0x00024da8:  bfd1              j                       -44                     # 0x24d7c
-
-----------------
-IN: strncmp
-0x00024d7c:  4501              mv                      a0,zero
-0x00024d7e:  d4c770e3          bleu                    a2,a4,-704              # 0x24abe
-
-----------------
-IN: strncmp
-0x00024d82:  078e              slli                    a5,a5,3
-0x00024d84:  00f5d5b3          srl                     a1,a1,a5
-0x00024d88:  00f85833          srl                     a6,a6,a5
-0x00024d8c:  0ff5f513          andi                    a0,a1,255
-0x00024d90:  0ff87793          andi                    a5,a6,255
-0x00024d94:  9d1d              subw                    a0,a0,a5
-0x00024d96:  b325              j                       -728                    # 0x24abe
+IN: getenv
+0x00019eea:  014487b3          add                     a5,s1,s4
+0x00019eee:  f16d              bnez                    a0,-30                  # 0x19ed0
 
 ----------------
 IN: getenv
@@ -5393,11 +5292,6 @@ IN: strlen
 0x00016f86:  d6f5              beqz                    a3,-20                  # 0x16f72
 
 ----------------
-IN: strlen
-0x0001701c:  00a80793          addi                    a5,a6,10
-0x00017020:  b755              j                       -92                     # 0x16fc4
-
-----------------
 IN: rindex
 0x00024f22:  6442              ld                      s0,16(sp)
 0x00024f24:  60e2              ld                      ra,24(sp)
@@ -5449,12 +5343,8 @@ IN: memrchr
 
 ----------------
 IN: memrchr
-0x0004139a:  0036161b          slliw                   a2,a2,3
-0x0004139e:  577d              addi                    a4,zero,-1
-0x000413a0:  00c71733          sll                     a4,a4,a2
-0x000413a4:  8fd9              or                      a5,a5,a4
-0x000413a6:  fff7c793          not                     a5,a5
-0x000413aa:  12079363          bnez                    a5,294                  # 0x414d0
+0x000414c2:  fff7c793          not                     a5,a5
+0x000414c6:  ee0784e3          beqz                    a5,-280                 # 0x413ae
 
 ----------------
 IN: memrchr
@@ -5502,58 +5392,64 @@ IN: memrchr
 
 ----------------
 IN: memrchr
-0x00041518:  0feff7b7          lui                     a5,65279
-0x0004151c:  0792              slli                    a5,a5,4
-0x0004151e:  eff78793          addi                    a5,a5,-257
-0x00041522:  07c2              slli                    a5,a5,16
-0x00041524:  eff78793          addi                    a5,a5,-257
-0x00041528:  07be              slli                    a5,a5,15
-0x0004152a:  f7f78793          addi                    a5,a5,-129
-0x0004152e:  00f776b3          and                     a3,a4,a5
-0x00041532:  96be              add                     a3,a3,a5
-0x00041534:  8f55              or                      a4,a4,a3
-0x00041536:  8fd9              or                      a5,a5,a4
-0x00041538:  fff7c713          not                     a4,a5
-0x0004153c:  0407d263          bgez                    a5,68                   # 0x41580
+0x0004141c:  feff07b7          lui                     a5,-4112
+0x00041420:  eff78793          addi                    a5,a5,-257
+0x00041424:  f01016b7          lui                     a3,-65279
+0x00041428:  07c2              slli                    a5,a5,16
+0x0004142a:  0692              slli                    a3,a3,4
+0x0004142c:  eff78793          addi                    a5,a5,-257
+0x00041430:  10168693          addi                    a3,a3,257
+0x00041434:  07c2              slli                    a5,a5,16
+0x00041436:  06c2              slli                    a3,a3,16
+0x00041438:  eff78793          addi                    a5,a5,-257
+0x0004143c:  10168693          addi                    a3,a3,257
+0x00041440:  97ba              add                     a5,a5,a4
+0x00041442:  fff74613          not                     a2,a4
+0x00041446:  06be              slli                    a3,a3,15
+0x00041448:  8ff1              and                     a5,a5,a2
+0x0004144a:  08068693          addi                    a3,a3,128
+0x0004144e:  8ff5              and                     a5,a5,a3
+0x00041450:  4501              mv                      a0,zero
+0x00041452:  c7ad              beqz                    a5,106                  # 0x414bc
 
 ----------------
 IN: memrchr
-0x00041540:  00871793          slli                    a5,a4,8
-0x00041544:  4519              addi                    a0,zero,6
-0x00041546:  0207c963          bltz                    a5,50                   # 0x41578
+0x00041454:  0feff7b7          lui                     a5,65279
+0x00041458:  0792              slli                    a5,a5,4
+0x0004145a:  eff78793          addi                    a5,a5,-257
+0x0004145e:  07c2              slli                    a5,a5,16
+0x00041460:  eff78793          addi                    a5,a5,-257
+0x00041464:  07be              slli                    a5,a5,15
+0x00041466:  f7f78793          addi                    a5,a5,-129
+0x0004146a:  00f776b3          and                     a3,a4,a5
+0x0004146e:  96be              add                     a3,a3,a5
+0x00041470:  8f55              or                      a4,a4,a3
+0x00041472:  8fd9              or                      a5,a5,a4
+0x00041474:  fff7c713          not                     a4,a5
+0x00041478:  1007d763          bgez                    a5,270                  # 0x41586
 
 ----------------
 IN: memrchr
-0x0004154a:  01071793          slli                    a5,a4,16
-0x0004154e:  4515              addi                    a0,zero,5
-0x00041550:  0207c463          bltz                    a5,40                   # 0x41578
+0x0004147c:  00871693          slli                    a3,a4,8
+0x00041480:  4799              addi                    a5,zero,6
+0x00041482:  0206c963          bltz                    a3,50                   # 0x414b4
 
 ----------------
 IN: memrchr
-0x00041554:  01871793          slli                    a5,a4,24
-0x00041558:  4511              addi                    a0,zero,4
-0x0004155a:  0007cf63          bltz                    a5,30                   # 0x41578
+0x00041486:  01071693          slli                    a3,a4,16
+0x0004148a:  4795              addi                    a5,zero,5
+0x0004148c:  0206c463          bltz                    a3,40                   # 0x414b4
 
 ----------------
 IN: memrchr
-0x0004155e:  02071793          slli                    a5,a4,32
-0x00041562:  450d              addi                    a0,zero,3
-0x00041564:  0007ca63          bltz                    a5,20                   # 0x41578
+0x000414b4:  00f58533          add                     a0,a1,a5
+0x000414b8:  04656c63          bgtu                    t1,a0,88                # 0x41510
 
 ----------------
 IN: memrchr
-0x00041568:  02871793          slli                    a5,a4,40
-0x0004156c:  4509              addi                    a0,zero,2
-0x0004156e:  0007c563          bltz                    a5,10                   # 0x41578
-
-----------------
-IN: memrchr
-0x00041572:  833d              srli                    a4,a4,15
-0x00041574:  00177513          andi                    a0,a4,1
-0x00041578:  952e              add                     a0,a0,a1
-0x0004157a:  6422              ld                      s0,8(sp)
-0x0004157c:  0141              addi                    sp,sp,16
-0x0004157e:  8082              ret                     
+0x000414bc:  6422              ld                      s0,8(sp)
+0x000414be:  0141              addi                    sp,sp,16
+0x000414c0:  8082              ret                     
 
 ----------------
 IN: __init_misc
