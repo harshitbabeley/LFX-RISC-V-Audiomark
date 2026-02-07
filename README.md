@@ -54,4 +54,4 @@ Q15 y = a + alpha * b using vector intrinsics of riscv where <br>
 
 ## Results Obtained:
 The theorteical speedup was around 6.2x. The vlen for the system tested on was 8 and the no of instructions per iteration were 14 and 18 for scalar and vector implemanetions respectively.
-Since the system was veified using qemu the results devieated from ideality, but showed vector to be bit‑for‑bit identical to the scalar reference for all tested inputs (the harness will check).
+Since the system was verified using qemu the results diviated from ideality, but showed vector to be bit‑for‑bit identical to the scalar reference for all tested inputs (the harness will check).
