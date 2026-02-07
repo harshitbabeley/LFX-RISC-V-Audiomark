@@ -51,6 +51,7 @@ Q15 y = a + alpha * b using vector intrinsics of riscv where <br>
 **Script file** : run_benchmark.sh to test the speedup obatined while emulating riscv64 on qemu 
 
     ./run_benchmark.sh
+**Results** : Terminal outputs after runnig the object files and script file. The run_benchmark shows a probabilistic model of the no of cycles by running both the object file 100 times. 
 
 ## Results Obtained:
 The theorteical speedup was around 6.2x. The vlen for the system tested on was 8 and the no of instructions per iteration were 14 and 18 for scalar and vector implemanetions respectively.
